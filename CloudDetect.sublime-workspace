@@ -1,0 +1,273 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"low",
+				"low_point"
+			],
+			[
+				"codece",
+				"codeception"
+			],
+			[
+				"cod",
+				"codeception_dir"
+			],
+			[
+				"base",
+				"basedir"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/chrisramsay/Servers/C84xBy/Vagrantfile",
+		"/Users/chrisramsay/Servers/C84xBy/puphpet/config.yaml",
+		"/Users/chrisramsay/Servers/C84xBy/puphpet/puppet/manifest.pp",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/CloudDetect/src/sketch.ino",
+		"/Users/chrisramsay/Development/bash/cov-txt.txt",
+		"/Users/chrisramsay/Development/despatchbaypro/build/scripts/sync.sh",
+		"/Users/chrisramsay/Development/despatchbaypro/tests/_log/readme.md",
+		"/Users/chrisramsay/Development/despatchbaypro/tests/functional.suite.yml",
+		"/Users/chrisramsay/Development/despatchbaypro/tests/unit.suite.yml",
+		"/Users/chrisramsay/Development/despatchbaypro/tests/_bootstrap.php",
+		"/Users/chrisramsay/Development/despatchbaypro/phpunit.xml",
+		"/Users/chrisramsay/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/chrisramsay/Development/despatchbaypro/codeception.yml.template",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/pressureTemp/pressureTemp.pde",
+		"/Users/chrisramsay/Development/despatchbay/VERSION.txt",
+		"/Users/chrisramsay/Development/despatchbaypro/build.xml",
+		"/Users/chrisramsay/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/chrisramsay/Development/service-citylink/tests/application/models/objects/citylink/v_prefixes_report_mainTest.php",
+		"/Users/chrisramsay/Development/service-citylink/tests/application/models/objects/citylink/v_shipments_preadviceTest.php",
+		"/Users/chrisramsay/Development/service-citylink/tests/application/models/objects/citylink/tracking_codeTest.php",
+		"/Users/chrisramsay/Development/service-citylink/tests/application/models/objects/citylink/tracking_fileTest.php",
+		"/Users/chrisramsay/Development/service-citylink/sql/000_CREATE_DATABASE.sql",
+		"/Users/chrisramsay/Development/service-citylink/src/application/models/datasources/extra_parameters.php",
+		"/Users/chrisramsay/Development/service-citylink/notes/crontab.sample",
+		"/Users/chrisramsay/Development/service-citylink/Citylink.udb",
+		"/Users/chrisramsay/Development/service-citylink/tests/fixtures/citylink/extraparameters.xml",
+		"/Users/chrisramsay/Development/service-citylink/src/application/controllers/citylink/error_404.php",
+		"/Users/chrisramsay/Development/service-citylink/sql/039_PROC_X1PASSWORD.sql",
+		"/Users/chrisramsay/Development/service-citylink/src/application/models/datasources/citylink/v_prefixes_report_main.php",
+		"/Users/chrisramsay/Development/service-citylink/phpunit.xml",
+		"/Users/chrisramsay/Development/service-citylink/notes/gazetteer import procedure.txt",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/remap/remap.ino",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/MLX90614/MLX90614.ino",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/read_celsius.ino",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/libraries/NanoSatisfi_MLX90614/NanoSatisfi_MLX90614.cpp",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/libraries/NanoSatisfi_MLX90614/NanoSatisfi_MLX90614.h",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/libraries/NanoSatisfi_MLX90614/keywords.txt",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/IRTemp/IRTemp.pde",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/Blink/Blink.ino",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/BMP085/BMP085.pde",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/IRTemp/remap.ino",
+		"/Users/chrisramsay/Dropbox/Arduino/Sketchbook/IRTemp/IRTemp.ino",
+		"/Users/chrisramsay/Development/despatchbay/build.xml",
+		"/Users/chrisramsay/gitolite-admin/conf/gitolite.conf",
+		"/Users/chrisramsay/Development/despatchbaypro/build/scripts/parse.sh",
+		"/Users/chrisramsay/Development/tsg-core/src/vendor/munt.php",
+		"/Users/chrisramsay/Downloads/public_html/index.html",
+		"/Users/chrisramsay/Downloads/public_html/assets/js/main.js",
+		"/Users/chrisramsay/Downloads/TheSaleGroup/views/main.php",
+		"/Users/chrisramsay/Downloads/TheSaleGroup/classes/model.php",
+		"/Users/chrisramsay/Downloads/TheSaleGroup/classes/controller.php",
+		"/Users/chrisramsay/Development/despatchbaypro-current/VERSION.txt",
+		"/Users/chrisramsay/Downloads/configure.php",
+		"/Users/chrisramsay/Downloads/migrate",
+		"/Users/chrisramsay/Development/wsdatcap/upload.py",
+		"/Users/chrisramsay/Development/tsg-core/src/framework/migrate",
+		"/Users/chrisramsay/Development/tsg-core/build.xml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"/var/www",
+			"high_point",
+			"amb_temp",
+			"low_point",
+			"_log",
+			"config_dir",
+			"tsg_remote",
+			"teamcity_url",
+			"tsg_remote"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.BMP085":
+	{
+		"height": 100.0
+	},
+	"output.Blink":
+	{
+		"height": 100.0
+	},
+	"output.IRTemp":
+	{
+		"height": 320.0
+	},
+	"output.MLX90614":
+	{
+		"height": 128.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.remap":
+	{
+		"height": 219.0
+	},
+	"output.stino_log":
+	{
+		"height": 100.0
+	},
+	"project": "CloudDetect.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"create",
+				"sql/000_CREATE_DATABASE.sql"
+			],
+			[
+				"procedure",
+				"notes/gazetteer import procedure.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 228.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
