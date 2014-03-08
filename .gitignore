@@ -16,5 +16,5 @@
 *.exe
 *.out
 *.app
-CloudDetect.sublime-project
-CloudDetect.sublime-workspace
+*.sublime-project
+*.sublime-workspace
