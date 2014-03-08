@@ -4,9 +4,10 @@
  
 // Data wire is plugged into pin 2 on the Arduino
 #define ONE_WIRE_BUS 2
+#define TEMP_OBJ 0
+#define TEMP_AMB 1
  
 // Setup a oneWire instance to communicate with any OneWire devices 
-// (not just Maxim/Dallas temperature ICs)
 OneWire oneWire(ONE_WIRE_BUS);
  
 // Pass our oneWire reference to Dallas Temperature.
@@ -31,41 +32,39 @@ void loop(){
   // int dev = 0x55<<1;
   sensors.requestTemperatures(); // Send the command to get temperatures
 
-  float dew_point = sensors.getTempCByIndex(0);
-  float max_point = dew_point + 2.0;
+  float t_dew = sensors.getTempCByIndex(0);
+  float t_max = t_dew + 5.0;
   // read sensor object temperature
-  float amb_point = read_dev(dev, 0);
+  float t_ref = read_dev(dev, TEMP_OBJ);
 
-  
-
-  Serial.print("   l is: ");
-  Serial.print(dew_point);
-  Serial.println("");
-
-  if (amb_point < dew_point) {
+  // Ambient less than dew
+  // So turn heater ON
+  if (t_ref < t_dew) {
   	heater = true;
-    Serial.print("| a < l  Heat:  ");
-    Serial.print(heater);
-    Serial.print(" ");
-    print_status(dev, amb_point);
+    Serial.print(t_ref);
+    Serial.print(" > ");
+    Serial.print(t_dew);
+    Serial.print(" : heat: ");
+    Serial.println(heater);
   	digitalWrite(led, HIGH);
   }
-  else if (amb_point > max_point) {
+  // Ambient greater than dew + hysteresis gap
+  // So turn heater OFF
+  else if (t_ref > t_max) {
   	heater = false;
-    Serial.print("| a > l  Heat:  ");
-    Serial.print(heater);
-    Serial.print(" ");
-    print_status(dev, amb_point);
+    Serial.print(t_ref);
+    Serial.print(" > ");
+    Serial.print(t_max);
+    Serial.print(" : heat: ");
+    Serial.println(heater);
   	digitalWrite(led, LOW);
+  // In hysteresis gap
+  // No further action required
   } else {
-    Serial.print("| ok     Heat:  ");
-    Serial.print(heater);
-    Serial.print(" ");
-    print_status(dev, amb_point);
+    Serial.print("OK - heat:  ");
+    Serial.println(heater);
   }
 
-
-  //read_dev(0x55<<1);
   delay(2000); // wait a second before printing again
 }
 
