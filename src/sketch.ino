@@ -33,7 +33,8 @@ void loop(){
 
   float dew_point = sensors.getTempCByIndex(0);
   float max_point = dew_point + 2.0;
-  float amb_point = read_dev(dev);
+  // read sensor object temperature
+  float amb_point = read_dev(dev, 0);
 
   
 
@@ -75,14 +76,18 @@ void print_status(int dev, float temp) {
   Serial.println(temp);
 }
 
-float read_dev(int device) {
+float read_dev(int device, int TaTo) {
   int dev = device;
   int data_low = 0;
   int data_high = 0;
   int pec = 0;
 
   i2c_start_wait(dev+I2C_WRITE);
-  i2c_write(0x07);
+
+  // read object (0) or ambient temperature (1)
+  if (TaTo) i2c_write(0x06); else i2c_write(0x07);
+
+  // i2c_write(0x07);
 
   // read
   i2c_rep_start(dev+I2C_READ);

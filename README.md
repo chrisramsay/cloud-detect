@@ -1,2 +1,2 @@
-cloud_detect
+Cloud Detect
 ============
