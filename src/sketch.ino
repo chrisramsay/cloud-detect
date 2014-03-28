@@ -1,6 +1,8 @@
 #include <i2cmaster.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
+
+#include "mlx90614.h"
  
 // Data wire is plugged into pin 2 on the Arduino
 #define ONE_WIRE_BUS 2
@@ -33,7 +35,7 @@ void loop(){
   sensors.requestTemperatures(); // Send the command to get temperatures
 
   float t_dew = sensors.getTempCByIndex(0);
-  float t_max = t_dew + 5.0;
+  float t_max = t_dew + 2.0;
   // read sensor object temperature
   float t_ref = read_dev(dev, TEMP_OBJ);
 
@@ -41,27 +43,39 @@ void loop(){
   // So turn heater ON
   if (t_ref < t_dew) {
   	heater = true;
+    Serial.print("Ref ");
     Serial.print(t_ref);
-    Serial.print(" > ");
+    Serial.print(" < ");
+    Serial.print("Dew ");
     Serial.print(t_dew);
     Serial.print(" : heat: ");
     Serial.println(heater);
-  	digitalWrite(led, HIGH);
+  	digitalWrite(led, LOW);
   }
   // Ambient greater than dew + hysteresis gap
   // So turn heater OFF
   else if (t_ref > t_max) {
   	heater = false;
+    Serial.print("Ref ");
     Serial.print(t_ref);
     Serial.print(" > ");
+    Serial.print("Max ");
     Serial.print(t_max);
     Serial.print(" : heat: ");
     Serial.println(heater);
-  	digitalWrite(led, LOW);
+  	digitalWrite(led, HIGH);
   // In hysteresis gap
   // No further action required
   } else {
-    Serial.print("OK - heat:  ");
+    Serial.print("Ref ");
+    Serial.print(t_ref);
+    Serial.print(", ");
+    Serial.print("Dew ");
+    Serial.print(t_dew);
+    Serial.print(", ");
+    Serial.print("Max ");
+    Serial.print(t_max);
+    Serial.print(" : hysteresis - heat:  ");
     Serial.println(heater);
   }
 
@@ -73,44 +87,4 @@ void print_status(int dev, float temp) {
   Serial.print(dev);
   Serial.print(", a is: ");
   Serial.println(temp);
-}
-
-float read_dev(int device, int TaTo) {
-  int dev = device;
-  int data_low = 0;
-  int data_high = 0;
-  int pec = 0;
-
-  i2c_start_wait(dev+I2C_WRITE);
-
-  // read object (0) or ambient temperature (1)
-  if (TaTo) i2c_write(0x06); else i2c_write(0x07);
-
-  // i2c_write(0x07);
-
-  // read
-  i2c_rep_start(dev+I2C_READ);
-  // Read 1 byte and then send ack
-  data_low = i2c_readAck();
-  // Read 1 byte and then send ack
-  data_high = i2c_readAck();
-  pec = i2c_readNak();
-  i2c_stop();
-
-  // This converts high and low bytes together and processes temperature, 
-  // MSB is a error bit and is ignored for temps
-  // 0.02 degrees per LSB (measurement resolution of the MLX90614)
-  double tempFactor = 0.02;
-  // zero out the data
-  double tempData = 0x0000;
-  // data past the decimal point
-  int frac; 
-
-  // This masks off the error bit of the high byte,
-  // then moves it left 8 bits and adds the low byte.
-  tempData = (double)(((data_high & 0x007F) << 8) + data_low);
-  tempData = (tempData * tempFactor)-0.01;
-
-  float celcius = tempData - 273.15;
-  return celcius;
 }
